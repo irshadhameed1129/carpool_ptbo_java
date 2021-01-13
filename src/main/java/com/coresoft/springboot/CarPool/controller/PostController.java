@@ -36,7 +36,7 @@ public class PostController {
 //	}
 //	
 
-	@CrossOrigin(origins= "http://localhost:3000")
+	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@GetMapping( "/getAllPost")
 	@ResponseBody
 	public List<Post> getAllPost () {
@@ -50,7 +50,7 @@ public class PostController {
 	
 //	
 //	we can also use @DeleteMapping instead of @GetMapping
-	@CrossOrigin(origins= "http://localhost:3000")
+	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 //	fetch Post from data base by user id
 	@GetMapping( "/getPost/{id}")
 	public List<Post> getPostByUSerID (@PathVariable int id) {
@@ -62,7 +62,7 @@ public class PostController {
 	}
 
 	
-	@CrossOrigin(origins= "http://localhost:3000")
+	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@PostMapping( "/newPost")
 	@ResponseBody
 	public Post saveUser (@RequestBody Post postFromReact) {
@@ -86,7 +86,7 @@ public class PostController {
 	}
 	
 	
-	@CrossOrigin(origins= "http://localhost:3000")
+	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@PostMapping( "/searchPost")
 	@ResponseBody
 	public  List<ViewUserPost> searchPost (@RequestBody JsonPostHandler handler) {
