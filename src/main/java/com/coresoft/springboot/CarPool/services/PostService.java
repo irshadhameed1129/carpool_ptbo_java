@@ -31,5 +31,16 @@ public class PostService {
 		return postRespository.searchByfromEnd(from, end);
 	}
 	
+public String deleteById(int id) {
+		
+		String result;
+	try {
+		 postRespository.deleteById(id);
+		 result = "Post Deleted";
+	} catch (Exception e) {
+		result = "Product "+id+" not deleted";
+	}
+		return result;
+	}
 
 }

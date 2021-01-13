@@ -21,6 +21,7 @@ public class UserController {
 	@Autowired
 	private UserService userProfileServices;
 	
+//	@CrossOrigin(origins= "http://localhost:3000")
 	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@GetMapping( "/userlist")
 	public List<User> fetchProductList () {
@@ -31,6 +32,7 @@ public class UserController {
 	}
 	
 
+//	@CrossOrigin(origins= "http://localhost:3000")
 	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@PostMapping( "/registration")
 	@ResponseBody
@@ -52,7 +54,7 @@ public class UserController {
 		
 			return null;
 	}
-	
+//	@CrossOrigin(origins= "http://localhost:3000")
 	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@PostMapping( "/login")
 	@ResponseBody
@@ -70,6 +72,8 @@ public class UserController {
 			 
 	}
 	
+	
+//	@CrossOrigin(origins= "http://localhost:3000")
 	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@PostMapping( "/update")
 	@ResponseBody

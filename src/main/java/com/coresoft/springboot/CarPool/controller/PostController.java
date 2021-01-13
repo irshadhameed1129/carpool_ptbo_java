@@ -35,7 +35,7 @@ public class PostController {
 //		return products;
 //	}
 //	
-
+//	@CrossOrigin(origins= "http://localhost:3000")
 	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@GetMapping( "/getAllPost")
 	@ResponseBody
@@ -50,6 +50,7 @@ public class PostController {
 	
 //	
 //	we can also use @DeleteMapping instead of @GetMapping
+//	@CrossOrigin(origins= "http://localhost:3000")
 	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 //	fetch Post from data base by user id
 	@GetMapping( "/getPost/{id}")
@@ -61,7 +62,7 @@ public class PostController {
 		return posts;
 	}
 
-	
+//	@CrossOrigin(origins= "http://localhost:3000")
 	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@PostMapping( "/newPost")
 	@ResponseBody
@@ -85,7 +86,7 @@ public class PostController {
 			return null;
 	}
 	
-	
+//	@CrossOrigin(origins= "http://localhost:3000")
 	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
 	@PostMapping( "/searchPost")
 	@ResponseBody
@@ -106,6 +107,22 @@ public class PostController {
 		
 			return null;
 	}
+	
+	
+//	we can also use @DeleteMapping instead of @GetMapping
+//	@CrossOrigin(origins= "http://localhost:3000")
+	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
+//	fetch Post from data base by user id
+	@PostMapping( "/delete/{id}")
+	public String deletetById (@PathVariable int id) {
+		System.out.println(id);
+		
+		String posts =  postService.deleteById(id);
+		System.out.println(posts);
+		
+		return posts;
+	}
+
 	
 	
 	
