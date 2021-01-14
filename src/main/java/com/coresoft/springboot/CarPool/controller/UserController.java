@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.coresoft.springboot.CarPool.domain.User;
 import com.coresoft.springboot.CarPool.handler.JsonLoginHandler;
+import com.coresoft.springboot.CarPool.handler.JsonResetPasswordHandler;
 import com.coresoft.springboot.CarPool.services.UserService;
 
 @RestController
@@ -68,9 +69,37 @@ public class UserController {
 		
 			
 			return user;
-		
-			 
 	}
+	
+	
+//	@CrossOrigin(origins= "http://localhost:3000")
+	@CrossOrigin(origins= "https://car-pool-ptbo-react.herokuapp.com")
+	@PostMapping( "/resetPass")
+	@ResponseBody
+	public User resetPassword (@RequestBody JsonResetPasswordHandler handler) {
+//		System.out.println(handler);
+		User user= null;
+		User reseted = null;
+		System.out.println(handler);
+			//fetch data from database using email and pass;
+			user = userProfileServices.findByEmailMobile(handler.getEmail(),  handler.getMobile());
+			if (user != null) {
+				user.setPass(handler.getPass());
+				reseted = userProfileServices.saveNewUser(user);
+				System.out.println(reseted);
+				return reseted;
+			} else {
+				return null;
+			}
+		
+			
+			
+	}
+	
+	
+	
+	
+	
 	
 	
 //	@CrossOrigin(origins= "http://localhost:3000")

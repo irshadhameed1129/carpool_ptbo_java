@@ -23,6 +23,9 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	@Query("select p from User p where p.id = ?1")
 	public User findById(int id);
 	
+	@Query("select p from User p where p.email = ?1 and p.mobile = ?2")
+	public User findByEmailMobile(String email, String mobile);
+	
 	@Modifying
 	@Query("update  User p  set  p.mobile = ?1, p.pass= ?2  where p.id=?3")
 	public int update(String mobile, String pass, int id);

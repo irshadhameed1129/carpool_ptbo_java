@@ -35,6 +35,10 @@ public class UserService {
 		return userRepository.findById(id);
 	}
 	
+	public User findByEmailMobile(String email, String mobile) {
+		return userRepository.findByEmailMobile(email,mobile);
+	}
+	
 	public int updateUser(User user) {
 		System.out.println("service");
 		return userRepository.update(user.getMobile(), user.getPass(), user.getId());
